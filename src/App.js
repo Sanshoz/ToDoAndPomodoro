@@ -1,24 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './Footer.jsx'
+import Header from './Header.jsx'
+import {useState} from 'react';
+import ComponentTodo from './ComponentTodo.jsx';
+import {useEffect} from 'react';
 
-function App() {
+
+function handleButtonCardGear(event){
+  
+}
+
+
+
+
+
+const App = () => {
+  let [todos, setTodos] = useState([
+    {
+      title: 'test1',
+      id: 1,
+      todosList: ['test1','test2','test3']
+    },
+    {
+      title: 'test2',
+      id: 2,
+      todosList: ['test1','test2','test3']
+    },
+    {
+      title: 'test3',
+      id: 3,
+      todosList: ['test1','test2','test3']
+    }
+    ])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <main className="App w-screen h-screen dark:bg-slate-900 text-white">
+      <Header />
+      My Main test
+      <ComponentTodo  todos={todos}  />  
+      <Footer />
+    </main>
+    
   );
 }
 
